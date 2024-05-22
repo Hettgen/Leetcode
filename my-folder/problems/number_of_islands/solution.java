@@ -25,12 +25,12 @@ class Solution {
 
 
                 search(grid, x, y+1);
-
+                search(grid, x, y-1);
+                
                 search(grid, x+1, y);
-
                 search(grid, x-1, y);
 
-                search(grid, x, y-1);
+                
 
 
             }
@@ -39,9 +39,6 @@ class Solution {
         else{
             return;
         }
-        // if(grid[x][y] == '0'){
-        //     return;
-        // } R && D, L && U, 
 
     }
 
