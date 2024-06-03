@@ -21,7 +21,7 @@ class Solution {
         depthFirstSearch(root, treeList);
         int listSize = treeList.size();
         
-
+        // Iterate over array and search for two values that add to k
         for(int i = 0; i < listSize;){
 
             int value = treeList.get(i) + treeList.get(listSize - 1);
@@ -46,16 +46,12 @@ class Solution {
         if(root == null){
             return;
         }
+        // Inorder Traversal of Tree
             depthFirstSearch(root.left, treeList);
         
             treeList.add(root.val);
 
             depthFirstSearch(root.right, treeList);
-
     }
-
-
-    
-    
 
 }
