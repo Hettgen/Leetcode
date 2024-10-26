@@ -1,25 +1,25 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         
-        HashMap<Integer, Integer> sum = new HashMap<Integer, Integer>();
+        HashMap<Integer,Integer> numbers = new HashMap<Integer,Integer>();
+        
+        for(int i = 0; i < nums.length; i++){
 
-        // for(int i = 0; i < nums.length; i++){
+            numbers.put(nums[i], i);
+        }
 
-        //     sum.put(nums[i], i);
-        // }
 
         for(int i = 0; i < nums.length; i++){
 
             int complement = target - nums[i];
-            Integer index = sum.get(complement);
 
-            
-            if(index != null){
-                return new int[] {index, i};
+            if(numbers.containsKey(complement) && numbers.get(complement) != i){
+                return new int[]{i, numbers.get(complement)};
             }
-            sum.put(nums[i], i);
 
         }
-        return new int[] {2,2};
+
+        return new int[]{};
+
     }
 }
